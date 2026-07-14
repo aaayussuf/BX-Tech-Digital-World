@@ -1,9 +1,7 @@
 # TODO
-- [ ] Diagnose why frontend shows "Failed to fetch" after `npm run dev`.
-  - [ ] Verify frontend API base/proxy configuration.
-  - [ ] Confirm backend is reachable on http://localhost:5000 and responds on /api/* routes.
-  - [ ] Ensure CORS is configured correctly for the frontend origin.
-- [x] Implement fix in code/config.
+- [ ] Resolve merge conflict markers in `frontend/src/main.jsx`, `frontend/src/App.jsx`, and `frontend/index.html`
+- [ ] Ensure referenced components in `frontend/src/App.jsx` exist (remove missing `AdminDashboard` if needed)
+- [x] Run `npm run dev` in `frontend` and verify no parse/build errors
+- [ ] Re-run `npm run lint` if available
 
-- [ ] Test: run backend + frontend, verify API calls succeed from browser.
 

@@ -1,6 +1,7 @@
 from .extensions import db
-from .models import User, Category, Product
+from .app.models import User, Category, Product
 from .app import create_app
+
 
 
 def seed_db_if_empty():
@@ -11,7 +12,7 @@ def seed_db_if_empty():
     # Create default admin/user
     admin = User(email='admin@bxtech.com', role='admin')
     admin.set_password('admin123')
-    user = User(email='user@bxtech.com', role='user')
+    user = User(email='user@bxtech.com', role='customer')
     user.set_password('user123')
     db.session.add_all([admin, user])
 

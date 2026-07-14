@@ -1,18 +1,11 @@
 {
-<<<<<<< HEAD
-  "name": "frontend",
-  "private": true,
-  "version": "0.0.0",
-=======
   "name": "bx-tech-digital-world-frontend",
   "private": true,
   "version": "0.0.1",
->>>>>>> 6e2b1a9d218fec292f12273c66a8e26e87c8e682
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-<<<<<<< HEAD
     "lint": "oxlint",
     "preview": "vite preview"
   },
@@ -30,28 +23,12 @@
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "autoprefixer": "^10.5.2",
     "oxlint": "^1.71.0",
     "vite": "^8.1.1"
   }
 }
-=======
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.7",
-    "vite": "^5.4.2"
-  }
-}
-
->>>>>>> 6e2b1a9d218fec292f12273c66a8e26e87c8e682
