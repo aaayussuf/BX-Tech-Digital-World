@@ -1,4 +1,3 @@
 export default function Register() {
-  return <div>Coming soon: Register</div>;
+    return <h1>Create Account</h1>;
 }
-

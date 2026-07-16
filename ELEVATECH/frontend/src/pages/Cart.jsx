@@ -1,4 +1,3 @@
 export default function Cart() {
-  return <div>Coming soon: Cart</div>;
+    return <h1>Shopping Cart</h1>;
 }
-

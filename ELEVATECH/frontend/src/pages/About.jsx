@@ -1,4 +1,3 @@
 export default function About() {
-  return <div>Coming soon: About</div>;
+    return <h1>About ELEVATECH</h1>;
 }
-
