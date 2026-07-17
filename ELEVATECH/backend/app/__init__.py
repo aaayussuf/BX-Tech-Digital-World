@@ -1,5 +1,5 @@
-from flask import Flask, jsonify
-from flask_cors import CORS
+from flask import Flask, jsonify  # type: ignore
+from flask_cors import CORS  # type: ignore
 
 from config import Config
 from app.extensions import db, migrate, jwt
@@ -11,20 +11,19 @@ from app.models import User, Category, Product
 from app.routes.auth import auth_bp
 from app.routes.products import products_bp
 from app.routes.admin_products import admin_products_bp
-
+from app.routes.addresses import addresses_bp
+from app.routes.wishlist import wishlist_bp
 
 
 def create_app():
-
     app = Flask(__name__)
 
     app.config.from_object(Config)
 
-
     CORS(
         app,
         resources={r"/api/*": {"origins": Config.CORS_ORIGINS.split(",")}},
-        supports_credentials=True
+        supports_credentials=True,
     )
 
     db.init_app(app)
@@ -32,12 +31,12 @@ def create_app():
     jwt.init_app(app)
 
     app.register_blueprint(auth_bp, url_prefix="/api/auth")
-
     app.register_blueprint(products_bp)
-
     app.register_blueprint(admin_products_bp)
+    app.register_blueprint(addresses_bp)
 
-
+    # Step 5 — Register the Blueprint
+    app.register_blueprint(wishlist_bp)
 
     @app.route("/api/products")
     def get_products():
@@ -49,3 +48,4 @@ def create_app():
         return {"message": "Welcome to ELEVATECH API"}
 
     return app
+
