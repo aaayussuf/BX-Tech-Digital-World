@@ -86,7 +86,9 @@ def login():
 
     return jsonify({
         "token": access_token,
-        "user": user.to_dict()
+        "user_id": user.id,
+        "email": user.email,
+        "role": user.role
     })
 
 
