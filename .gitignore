@@ -3,25 +3,16 @@
 # ==========================
 .env
 *.env
-!*.env.example
 
 # ==========================
-# Python Bytecode / Cache
+# Python Bytecode
 # ==========================
 __pycache__/
 *.py[cod]
 *$py.class
-*.pyc
 
 # ==========================
-# Virtual Environment
-# ==========================
-venv/
-.venv/
-env/
-
-# ==========================
-# Database
+# Database / Instance
 # ==========================
 *.db
 *.sqlite
@@ -40,14 +31,15 @@ instance/
 Thumbs.db
 
 # ==========================
-# Uploads / Media
+# Uploads / Media (user-generated)
 # ==========================
-backend/app/uploads/*
-!backend/app/uploads/.gitkeep
+ELEVATECH/backend/app/uploads/*
+!ELEVATECH/backend/app/uploads/.gitkeep
 
 # ==========================
-# Node / Build
+# Virtual Environment
 # ==========================
-node_modules/
-dist/
+venv/
+.venv/
+env/
 
