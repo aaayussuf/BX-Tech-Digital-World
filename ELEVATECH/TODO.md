@@ -1,12 +1,10 @@
-# TODO - BX-Tech Digital World
+# TODO: Stripe Payment Verification Feature
 
-## Account Area (Frontend)
-- [x] Create account folder structure under `frontend/src/pages/account`, `components/account`, `context`, `services`. 
-- [x] Implement `AuthContext.jsx` for token storage, `logout`, protected route helper.
-- [x] Implement `services/authService.js` for login/logout/me calls.
-- [x] Implement account pages: `Dashboard`, `Profile`, `Orders`, `OrderDetails`, `Wishlist`, `Addresses`, `ChangePassword`.
-- [x] Implement account components: `Sidebar`, `OrderCard`, `AddressCard`, `ProfileCard`.
-- [x] Update `src/App.jsx` routes to include authenticated `/account/*` routes.
-- [x] Update `src/pages/Login.jsx` to call backend login, store token, redirect to `/account/Dashboard`.
-- [x] Run frontend dev server and ensure routes render (API may need backend alignment).
+## Steps
+
+- [x] Step 1: Update `retrieve_session` in `stripe_service.py` to include `expand=["payment_intent"]`
+- [x] Step 2: Add `retrieve_session` import in `checkout.py`
+- [x] Step 3: Add `/verify/<session_id>` GET route in `checkout.py`
+- [x] Step 4: Update `checkout-success.jsx` with session verification fetch logic
+- [x] Step 5: Verify everything compiles/runs correctly
 

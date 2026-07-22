@@ -66,4 +66,8 @@ def create_checkout_session(order_id, order=None, success_url=None, cancel_url=N
 
 def retrieve_session(session_id):
     init_stripe()
-    return stripe.checkout.Session.retrieve(session_id)
+
+    return stripe.checkout.Session.retrieve(
+        session_id,
+        expand=["payment_intent"],
+    )

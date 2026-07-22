@@ -12,6 +12,7 @@ from app.routes.orders import restore_order_inventory
 
 from app.services.stripe_service import (
     create_checkout_session,
+    retrieve_session,
     verify_webhook_event,
 )
 
@@ -79,6 +80,26 @@ def create_checkout():
     db.session.commit()
 
     return jsonify({"checkout_session_id": session.id, "url": session.url}), 201
+
+
+@checkout_bp.route("/verify/<session_id>", methods=["GET"])
+def verify_payment(session_id):
+    """
+    Verify a Checkout Session directly with Stripe.
+    """
+
+    try:
+        session = retrieve_session(session_id)
+
+        return jsonify({
+            "paid": session.payment_status == "paid",
+            "status": session.payment_status,
+            "order_id": session.metadata.get("order_id"),
+            "payment_intent": session.payment_intent.id if session.payment_intent else None,
+        })
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
 
 @checkout_bp.route("/webhook", methods=["POST"])
